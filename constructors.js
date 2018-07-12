@@ -13,7 +13,10 @@
   The values for the make and model will come from two parameters, make and model (in that order).
 */
 
-// Code here
+function CarFactory(make,model){
+  this.make = make,
+  this.model = model
+}
 
 
 
@@ -32,7 +35,7 @@ function Employee(name, email, hireDate) {
   Assign the result of the invocation to a variable called bob.
 */
 
-// Code here
+var bob = new Employee('Bob','bob@gmail.com','01-02-98');
 
 
 
@@ -41,8 +44,8 @@ function Employee(name, email, hireDate) {
 // Do not edit the code below.
 var prius = new Car('Toyota', 'Prius', 2011);
 var mustang = new Car('Ford', 'Mustang', 2013);
-prius.moveCar(); // Increments prius' move property by 10. Returns the new move property.
-mustang.moveCar(); // Increments mustang' move property by 10. Returns the new move property.
+prius.moveCar(10); // Increments prius' move property by 10. Returns the new move property.
+mustang.moveCar(10); // Increments mustang' move property by 10. Returns the new move property.
 // Do not edit the code above.
 
 /*
@@ -53,6 +56,14 @@ mustang.moveCar(); // Increments mustang' move property by 10. Returns the new m
   You'll also need to use the 'this' keyword properly in order to make sure you're invoking moveCar on the right object (prius vs mustang).
 */
 
-// Code here
+
+function Car(make,model,year, move,moveCar){
+  this.make = make,
+  this.model = model,
+  this.year = year,
+  this.move = 0,
+  this.moveCar = function(){ return this.move += 10};
+}
+
 
 
